@@ -22,7 +22,7 @@ const checkImageStatus = async (name = 'base64') =>{
     } else {
         return false;
     }
-}
+};
 
 const uploadBase64 = (imagePath) => {
     base64Img.base64(imagePath, function(err, data) {
