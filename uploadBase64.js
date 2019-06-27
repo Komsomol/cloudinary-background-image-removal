@@ -1,8 +1,10 @@
-require('dotenv').config()
+require('dotenv').config();
+
 var cloudinary = require('cloudinary');
 var base64Img = require('base64-img');
 var async = require("async");
 // Set your API information
+
 cloudinary.config({
 	cloud_name: process.env.CLOUD_NAME,
 	api_key: process.env.API_KEY,
@@ -16,7 +18,7 @@ const checkImageStatus = async (name = 'base64') =>{
     let response = await apiCall;
 
     if(response.info.background_removal.cloudinary_ai.status === 'complete'){
-        return true
+        return true;
     } else {
         return false;
     }
@@ -40,7 +42,7 @@ const uploadBase64 = (imagePath) => {
                 }
             }
         );
-    })
-}
+    });
+};
 
 // uploadBase64('images/face.jpg');

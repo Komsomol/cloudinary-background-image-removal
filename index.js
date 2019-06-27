@@ -1,6 +1,6 @@
 // npm install cloudinary
 var cloudinary = require('cloudinary');
-require('dotenv').config()
+require('dotenv').config();
 
 // Set your API information
 cloudinary.config({
@@ -10,18 +10,18 @@ cloudinary.config({
 });
 
 // Upload an image and remove background
-cloudinary.v2.uploader.upload('images/face.jpg', 
+cloudinary.v2.uploader.upload('images/photo.jpg', 
     {   
         public_id: "remove-bg-test",
         background_removal: "cloudinary_ai",
-        notification_url: 'https://1230ffa6.ngrok.io/image'
+        notification_url: 'https://e6037902.ngrok.io/image'
     }, 
     function(error, result) {
         if(!error){
             console.log(result, error);
             console.log(result.info.background_removal.cloudinary_ai);
-            let path = result.url
-            console.log(path)
+            let path = result.url;
+            console.log(path);
         } else {
             console.log(error);
         }
